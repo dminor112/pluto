@@ -12,20 +12,19 @@ import com.pluto.models.User;
 
 public class PollServlet extends HttpServlet{
     
-    public void doPost(HttpServletRequest request, HttpServletResponse response){
-        postMessage(request, response);
-    }
-    
-    private void postMessage(HttpServletRequest request, HttpServletResponse response)
-    {
-        User u = new User();
+    public void doGet(HttpServletRequest request, HttpServletResponse response){
+    	System.out.println("------====1");
+    	User u = new User();
         if (!u.hasEvent())
         {
             Continuation continuation = ContinuationSupport.getContinuation(request);
             u.setContinuation(continuation);
+            System.out.println("------====2");
             continuation.suspend(response);
         }
+        System.out.println("------====2");
         u.setContinuation(null);
         u.sendEvent(response);
+        System.out.println("------====4");
     }
 }

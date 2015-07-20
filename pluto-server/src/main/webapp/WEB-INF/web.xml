@@ -16,8 +16,11 @@
 		<servlet-name>pluto</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
-	<servlet>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:context/application-context.xml</param-value>
+	</context-param>
+<!-- 	<servlet>
 		<servlet-name>PollServlet</servlet-name>
 		<servlet-class>com.pluto.servlet.PollServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
@@ -26,5 +29,5 @@
 	<servlet-mapping>
 		<servlet-name>PollServlet</servlet-name>
 		<url-pattern>/poll</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 </web-app>

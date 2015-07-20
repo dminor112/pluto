@@ -4,6 +4,7 @@ import com.pluto.models.User;
 
 public interface UserService {
 
-	User getUserByUserId(String userId);
+	User getUser(String userId);
 
+	public void addUser(User user);
 }

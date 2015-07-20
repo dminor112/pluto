@@ -13,10 +13,10 @@
      
  	<!-- http://blog.csdn.net/sunitjy/article/details/6782431 -->
     <!-- Activates mapping of @Controller -->
-    <context:component-scan base-package="com.sohu.tv.m.controller" >
-    	<context:include-filter type="regex" expression="com.sohu.tv.m.controller.*"/>
+    <context:component-scan base-package="com.pluto.controller" >
+    	<context:include-filter type="regex" expression="com.pluto.controller.*"/>
     </context:component-scan>
-	
+	<context:component-scan base-package="com.pluto.service.*" />
     <!--Spring3.1开始的注解 HandlerMapping -->  
    <bean id="requestMappingHandlerMapping" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>  
    <!--Spring3.1开始的注解 HandlerAdapter -->  
