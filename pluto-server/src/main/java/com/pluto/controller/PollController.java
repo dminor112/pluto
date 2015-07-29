@@ -8,6 +8,7 @@ import org.eclipse.jetty.continuation.ContinuationSupport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,10 +22,12 @@ public class PollController extends BaseController{
 
 	@Autowired
 	UserService userService;
+	@Value("#{configProperties['app.dev']}")
+	private boolean mix;
 	
 	@RequestMapping(value = "/poll", method = RequestMethod.GET)
 	public void doPoll(HttpServletRequest request, HttpServletResponse response){
-    	logger.error("------====1");
+    	logger.error("------=====, " + mix);
     	String userId = request.getParameter("uid");
     	System.out.println("------====xxx" + userId);
     	if(userId == null){

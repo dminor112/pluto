@@ -60,5 +60,12 @@
 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename" value="classpath:message" />
 	</bean>
+	<bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">  
+       <property name="locations">  
+           <list>  
+               <value>classpath:properties/app.properties</value>  
+           </list>  
+       </property>  
+    </bean> 
 
 </beans>
